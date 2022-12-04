@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABOUT</title>
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+</head>
+
+<body>
+    {% block content %}
+    <div class="main">
+        <div class=".navbar">
+            <div class="icon">
+                <div class="logo">
+                    AcTIVE24/7
+                </div>
+            </div>
+            <div class="menu">
+                <ul>
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'home' %}">HOME</a></li>
+                    <li><a href="{% url 'about' %}">ABOUT</a></li>
+                    <li><a href="">SERVICE</a></li>
+                    <li><a href="{% url 'logout' %}">LOGOUT</a></li>
+
+                    {% else %}
+                    <li><a href="">SIGNUP</a></li>
+                    <li><a href="{% url 'login' %}">LOGIN</a></li>
+                    <li><a href="{% url 'about' %}">ABOUT</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="search">
+                <input class="srch" type="search" name="" placeholder="Type To text">
+                <a href="#"><button class="btn">Search</button></a>
+            </div>
+            {% if form.errors %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                There was an error with your form. Please try again!
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            {% endif %}
+        </div>
+        <div class="bio">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing. <br>
+                Culpa eius dignissimos sit, non alias fugiat necessitatibus! <br>
+                Assumenda et nulla, autem consequuntur incidunt veritatis quas, <br>
+                aperiam unde, sint nisi corrupti sequi.</p>
+        </div>
+    </div>
+    {% endblock %}
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+{% extends 'club/base.html' %}
+<div class="outerBox">
+    {% block content %}
+    <br>
+    <center>
+        <h1 class="h1_lbl">CREATE NEW USER ACCOUNT</h1>
+    </center>
+    {% if form.errors %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        There was an error with your form. Please try again!
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endif %}
+    <div class="shadow p-4 mb-5 bg-body rounded"> 
+        <form class="regform" action="{% url 'register' %}" method="POST">
+            {% csrf_token %}
+            <input class="form-control" type="text" name="username" id="useName">
+            <br>
+            <input class="form-control" type="email" name="email" id="userEmail">
+            <br>
+            <input class="form-control" type="password" name="password1" id="pass1">
+            <br>
+            <input class="form-control" type="password" name="password2" id="pass2">
+            <br>
+            <center>
+                <input type="Submit" class="btn btn-secondary ">
+            </center>
+        </form>
+    </div>
+
+    {% endblock %}
+</div>

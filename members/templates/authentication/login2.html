@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+
+<body>
+    <div class="main">
+        <div class="login">
+            <form class="_form" method="POST">
+                {% csrf_token %}
+                <h1 id="welcome">Welcome User <br>
+                    <span>Login Here</span>
+                </h1>
+                <img src="{% static 'images/newP.jpg' %}" alt=""><br>
+                <input type="text" placeholder="Username!" name="username" id="userName"><br>
+                <input type="password" placeholder="Enter password" name="password" id="passWord"><br>
+                <a href="">
+                    <p class="fpass">Fogot password</p>
+                </a>
+                <a href="">
+                    <p class="new">Create account</p>
+                </a>
+                <button id="login">Login</button>
+
+                <div class="icon">
+                    <a href="">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                    </a>
+                    <a href="">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                    </a>
+                    <a href="">
+                        <ion-icon name="logo-twitter"></ion-icon>
+                    </a>
+
+                    <a href="">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="{% static 'js/index.js' %}"></script>
+</body>
+
+</html>
