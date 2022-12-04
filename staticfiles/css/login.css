@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: black;
+}
+
+.login {
+  width: 335px;
+  height: 400px;
+  background-color: dodgerblue;
+  margin-top: 70px;
+  margin-left: 450px;
+  border-radius: 30px;
+}
+._form img {
+  width: 100px;
+  border-radius: 50px;
+  margin-left: 120px;
+}
+
+._form input {
+  width: 230px;
+  height: 24px;
+  margin-top: 10px;
+  margin-left: 50px;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  font-size: large;
+  letter-spacing: 2px;
+  background-color: none;
+}
+._form button {
+  width: 100px;
+  height: 30px;
+  border: none;
+  border-radius: 20px;
+  margin-top: 15px;
+  margin-left: 120px;
+  background-color: chartreuse;
+  color: blue;
+  font-size: large;
+  transition: 0.3s ease;
+}
+._form button:hover {
+  color: black;
+  background-color: #ff7200;
+}
+.fpass {
+  color: blue;
+  margin-top: 10px;
+  margin-left: 55px;
+}
+._form h1 {
+  color: white;
+  margin-left: 70px;
+  margin-top: 10px;
+}
+._form h1 span {
+  color: chartreuse;
+  margin-left: 25px;
+}
+.new {
+  margin-top: -18px;
+  color: white;
+  margin-left: 180px;
+}
+._form a {
+  text-decoration: none;
+  transition: 0.4s ease-in-out;
+}
+._form a:hover {
+  color: #ff7200;
+  background-color: red;
+}
+
+.icon a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.icon ion-icon {
+  color: #fff;
+  font-size: 30px;
+  padding-left: 14px;
+  padding-top: 5px;
+  transition: 0.3s ease;
+  margin-left: 20px;
+  margin-top: 10px;
+  padding-left: 20px;
+}
