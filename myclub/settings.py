@@ -1,6 +1,7 @@
 from pathlib import Path
 import os
 from decouple import config
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -75,8 +76,12 @@ WSGI_APPLICATION = 'myclub.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'club',
+        'USER': 'postgres',
+        'HOST': 'localhost',
+        'PASSWORD': 'Hiram4550!',
+        'PORT': '5432',
     }
 }
 
@@ -127,3 +132,8 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+DATABASE_URL = os.getenv('DATABASE_URL')
+DATABASES = {
+    'default': dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
+}
