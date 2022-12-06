@@ -14,6 +14,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
+CSRF_TRUSTED_ORIGINS = ['https://newclub.up.railway.app']
 
 ALLOWED_HOSTS = ['*']
 
